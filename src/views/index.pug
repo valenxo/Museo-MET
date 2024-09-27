@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Museo
+    link(rel="stylesheet", href="styles.css")
+  body
+    h1 Museo de Arte
+    form(id="searchForm")
+      label(for="department") Departamento:
+      select(id="department" name="departmentId")
+        option(value="") Elige una opción
+        each depto in departamentosTraducidos
+          option(value = depto.departmentId) #{depto.displayName}
+      br
+      label(for="geoLocation") Localización:
+      input(type="text" id="geoLocation" name="location" placeholder="Ej. France") 
+      br
+      label(for="keyword") Palabra clave:
+      input(type="text" id="keyword" name="keyword" placeholder="Buscar...") 
+      br
+      button(type="submit") Buscar
+    div#results.grid
+    div#pagination
+    script(src="function.js")
