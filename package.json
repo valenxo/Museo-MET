@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "next start",
+    "build": "next build && next export",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
